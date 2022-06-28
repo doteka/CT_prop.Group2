@@ -25,7 +25,7 @@ def solution(id_list, report, k):
     for userName in id_list:
         report_List[userName] = list(set(report_List[userName]))
 
-    # Check report count. Report Email Received Count k번 이상 신고당한 유저 확인 후 그 유저를 신고한 신고자의 처리 결과 메일을 받은 횟수 카운트
+    # Check report count. Report Email Received Counting
     for userName in id_list:
         if len(report_List[userName]) >= k:
             for consumer in report_List[userName]:
