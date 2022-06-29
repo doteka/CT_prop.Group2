@@ -7,9 +7,9 @@
 
 def solution(lottos, win_nums):
     answer = []
-    rank = [1, 2, 3, 4, 5, 6, 6]        # 순위를 배열화. 후반에 6 - count 식으로 해줄 예정
-    count = 0                           # 맞춘 숫자 갯수
-    unknownCount = 0                    # 알아보지 못하는 수
+    rank = [1, 2, 3, 4, 5, 6, 6]        # Ranking 
+    count = 0                           # correct numbers
+    unknownCount = 0                    # unknown numbers
 
     maxRank = 0
     maxRankIndex = 0
@@ -18,17 +18,17 @@ def solution(lottos, win_nums):
     minRankIndex = 0
 
     for value in lottos:
-        if value in win_nums:           # 맞춘 숫자가 있을 경우
+        if value in win_nums:           # If there is a correct number
             count += 1
-            win_nums.remove(value)      # 맞춘 숫자는 list에서 제거
-        elif value == 0:                # 알아보지 못하는 수 인 경우.
+            win_nums.remove(value)      # Remove correct number
+        elif value == 0:                # If there is a unknown number
             unknownCount += 1
 
-    if unknownCount <= len(win_nums):   # 알아보지 못하는 수가 당첨 수의 갯수보다 작은 경우에는 다 맞추면 최고 순위, 다 못맞추면 최저 순위
+    if unknownCount <= len(win_nums):   # As many as unknown number All right Max Rank, All wrong Min Rank
         maxRankIndex = 6 - (count + unknownCount)
         minRankIndex = 6 - count
 
-    else:                               # 알아보지 못하는 수가 당첨 수의 갯수보다 큰 경우에는 당첨 수의 갯수만큼 다 맞추면 최고 순위, 다 못맞추면 최저 순위
+    else:                               # As many as win_number All right Max Rank, All wrong Min Rank
         maxRankIndex = 6 - (count + len(win_nums))
         minRankIndex = 6 - count
 
@@ -44,9 +44,3 @@ lottos = [45, 4, 35, 20, 3, 9]
 win_nums = [20, 9, 3, 45, 4, 35]
 answer = solution(lottos, win_nums)
 print(answer)
-
-# for i in range(0, 6):
-#     arr[i] = int(input().split(','))
-
-# for i in range(0, 6):
-#     print(arr[i], end=' ')
