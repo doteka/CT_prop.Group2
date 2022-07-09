@@ -7,23 +7,21 @@
 
 def divide(n, num):    
     standard_number = {1: '1', 2: '2', 3: '4'}
-    if int(n/3) > 0:
-        if( n <= 3):
-            num.append(standard_number[n])
+    if int(n/4) > 0:
+        if( n <= 4):
+            num.append(standard_number[n%4])
         else:
-            k = divide(int(n/3), num)
-            if( n % (3 * k) == 0):
-                print("들")
-                print(num)
-
+            k = divide(int(n/4), num)
+            # print("C ", n%3, n)
+            if( n % (4) == 0):
                 num.append(standard_number[3])
-                print(num)
+                # print(num)
             else:
-                num.append(standard_number[n%(3*k)])
+                num.append(standard_number[n%(4)])
             # print(n%(3*k), end ='')
-            return int(n/3)
-    elif int(n/3) == 0:
-        num.append(standard_number[n])
+            return int(n/4)
+    elif int(n/4) == 0:
+        num.append(standard_number[n%4])
         # print(n, end = '')
         return n
 
@@ -34,6 +32,6 @@ def solution(n):
     answer = ''.join(s for s in k)
     return answer
 
-n = 40
+n = 4
 number = solution(n)
 print(number)
