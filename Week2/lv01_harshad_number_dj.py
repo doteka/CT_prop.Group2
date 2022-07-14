@@ -7,7 +7,7 @@
 
 def solution(x):
     answer = True
-    Allplus = sum(map(int, str(x)))
+    Allplus = sum(map(int, str(x))) # mapping number
 
     if x % Allplus == 0:
         answer = True

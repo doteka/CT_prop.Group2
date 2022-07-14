@@ -9,7 +9,7 @@ def divide(n, num):
     standard_number = {1: '1', 2: '2', 3: '4'}
     if int(n/4) > 0:
         if( n <= 4):
-            num.append(standard_number[n%4])
+            num.append(standard_number[n%0])
         else:
             k = divide(int(n/4), num)
             # print("C ", n%3, n)

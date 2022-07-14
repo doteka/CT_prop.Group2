@@ -15,6 +15,6 @@ def solution(s):
     answer = int(s)                         # string to integer
     return answer
 
-s = "one4seveneight"
+s = "one4eightseven"
 a = solution(s)
 print(a)
