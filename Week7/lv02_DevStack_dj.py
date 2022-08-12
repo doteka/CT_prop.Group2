@@ -3,7 +3,7 @@
 
 # 작성자 : 강동준
 # 최초 작성일 : 2022-08-12
-# 최종 작성일 : 20220-08-
+# 최종 작성일 : 20220-08-12
 def ceil(number):
     value = int(number)
     if value != number:     # Check for decimal points
@@ -21,7 +21,7 @@ def solution(progresses, speeds):
         count = 0
         if(index+1 < len(complet) and complet[index] >= complet[index+1]):  # See if there are technologies that can be deployed together
             for i in range(index+1, len(complet)):
-                if complet[index] >= complet[i]:
+                if complet[index] >= complet[i]:                            # Distribute together if the remaining work days are smaller after
                     count += 1
                 else:
                     break
